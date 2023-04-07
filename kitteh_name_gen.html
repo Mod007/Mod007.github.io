@@ -39,6 +39,17 @@
             "Catacomb", "Pawtriot", "PawtyAnimal", "FleasWitherspoon", "Purrsona",
             "Pawzilla", "MeowMachine", "Pawsome", "Purrloin", "Pawpurrazzi"
         ];
+        
+       const customs = ["fattus cattus", "fattius cattius", "kittius cattius the fattius", 
+    "catter","fatter","floof", "kitter", "kitteh", "bisse", "pspspspspsps", 
+    "babaghanoush", "fat", "cat", "O Allah the Almighty (Allahu Allah)", "Tuna",
+    "Protect me and guide me (Allahu Allah)", "chili", "filfil", 
+    "fattius cattius the rattius","sillius soddus",  "naughtius maximus", 
+    "sussus amogus", "el ratata", "katatouille","oh noo, our bowl, its broken",
+    "tummer", "thummyas gefferson", "tummy cat", "tumtum", "tummy", "tummius kitter",
+    "tummius cattius", "kat", "kitkat", "kitterkat", "kitter catter", "sonic",
+    "crash bandicoot", "glass bandicoot", "frozone on hardwood", 
+    "suspiscious moose", "404 kitter not found"];
 
         function getRandomElement(arr) {
             return arr[Math.floor(Math.random() * arr.length)];
@@ -47,9 +58,9 @@
         function generateKittenNames(includeAdjective) {
             const kittenNames = [];
 
-            for (let i = 0; i < 200; i++) {
+            for (let i = 0; i <= 1; i++) {
                 const randomAdjective = includeAdjective ? getRandomElement(adjectives) : '';
-                const randomNoun = getRandomElement(nouns);
+                const randomNoun = getRandomElement(customs);
                 const kittenName = randomAdjective + randomNoun;
                 kittenNames.push(kittenName);
             }
