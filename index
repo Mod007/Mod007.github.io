@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitten Name Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kitten Name Generator</h1>
+    <p>Do you want to include an adjective in the kitten names?</p>
+    <label for="include-adjective">Yes</label>
+    <input type="radio" id="include-adjective" name="include-adjective" value="yes" checked>
+    <label for="no-adjective">No</label>
+    <input type="radio" id="no-adjective" name="include-adjective" value="no">
+    <br><br>
+    <button id="generate-names">Generate Kitten Names</button>
+    <ul id="kitten-names"></ul>
