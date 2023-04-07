@@ -4,43 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitten Name Generator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        button {
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <h1>Kitten Name Generator</h1>
-    <p>Do you want to include an adjective in the kitten names?</p>
-    <label for="include-adjective">Yes</label>
-    <input type="radio" id="include-adjective" name="include-adjective" value="yes" checked>
-    <label for="no-adjective">No</label>
-    <input type="radio" id="no-adjective" name="include-adjective" value="no">
-    <br><br>
-    <button id="generate-names">Generate Kitten Names</button>
-    <ul id="kitten-names"></ul>
-
     <script>
-        const adjectives = [
-            "Chonky", "Fatty", "Wobbly", "Fluffy", "Cuddly", "Furry", "Tiny", "Sassy",
+        function generateKittenName() {
+            const adjectives = ["Chonky", "Fatty", "Wobbly", "Fluffy", "Cuddly", "Furry", "Tiny", "Sassy",
             "Feisty", "Whiskery", "Squeaky", "Scratchy", "Snoozy", "Pouncy", "Zoomy",
-            "Jumpy", "Purrfect", "Snuggly", "Bouncy", "Clumsy", "Sleepy", "Spotty"
-        ];
-
-        const nouns = [
-            "Whiskers", "Paws", "Meowster", "Catastrophe", "Furball", "KittyPurry",
-            "Mittens", "Fuzzinator", "Catzilla", "Purrmonster", "ScratchMachine",
-            "Clawdia", "Napster", "Purrfection", "Furrlicity", "KittenKaboodle",
-            "Pawtastic", "Mewsical", "Sphinxter", "Catsanova", "KittyMcFluff",
-            "Catacomb", "Pawtriot", "PawtyAnimal", "FleasWitherspoon", "Purrsona",
-            "Pawzilla", "MeowMachine", "Pawsome", "Purrloin", "Pawpurrazzi"
-        ];
-        
-       const customs = ["fattus cattus", "fattius cattius", "kittius cattius the fattius", 
+            "Jumpy", "Purrfect", "Snuggly", "Bouncy", "Clumsy", "Sleepy", "Spotty", "Fatter"];
+            const customs = ["fattus cattus", "fattius cattius", "kittius cattius the fattius", 
     "catter","fatter","floof", "kitter", "kitteh", "bisse", "pspspspspsps", 
     "babaghanoush", "fat", "cat", "O Allah the Almighty (Allahu Allah)", "Tuna",
     "Protect me and guide me (Allahu Allah)", "chili", "filfil", 
@@ -50,30 +19,38 @@
     "tummius cattius", "kat", "kitkat", "kitterkat", "kitter catter", "sonic",
     "crash bandicoot", "glass bandicoot", "frozone on hardwood", 
     "suspiscious moose", "404 kitter not found"];
-
-        function getRandomElement(arr) {
-            return arr[Math.floor(Math.random() * arr.length)];
+            
+            const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+            const randomName = customs[Math.floor(Math.random() * customs.length)];
+            
+            const kittenName = randomAdjective + " " + randomName;
+            
+            // Display the generated kitten name
+            document.getElementById("generatedName").innerText = kittenName;
         }
-
-        function generateKittenNames(includeAdjective) {
-            const kittenNames = [];
-
-            for (let i = 0; i <= 1; i++) {
-                const randomAdjective = includeAdjective ? getRandomElement(adjectives) : '';
-                const randomNoun = getRandomElement(customs);
-                const kittenName = randomAdjective + randomNoun;
-                kittenNames.push(kittenName);
-            }
-
-            return kittenNames;
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
-
-        const generateNamesButton = document.getElementById('generate-names');
-        const kittenNamesList = document.getElementById('kitten-names');
-        const includeAdjectiveInput = document.getElementById('include-adjective');
-        
-        generateNamesButton.addEventListener('click', () => {
-            const includeAdjective = includeAdjectiveInput.checked;
-            const kittenNames = generateKittenNames(includeAdjective);
-
-            kittenNamesList
+        button {
+            padding: 1rem;
+            font-size: 1rem;
+            background-color: #0099ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kitten Name Generator</h1>
+    <p>Click the button to generate a funny kitten name:</p>
+    <button onclick="generateKittenName()">Generate Name</button>
+    <p id="generatedName" style="font-size: 1.5rem; font-weight: bold;"></p>
+</body>
+</html>
