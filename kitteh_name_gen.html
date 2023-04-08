@@ -47,16 +47,28 @@
         "gelatokitty", "kopicat", "nipponcat", "tofuwhiskers", "raviolipaws", "meowtatouille",
         "fatamericano", "zippymeow"];
             
-            const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
-            const randomName = customs[Math.floor(Math.random() * customs.length)];
-            
-            const kittenName = randomAdjective + " " + randomName;
-            
-            // Display the generated kitten name
-            document.getElementById("generatedName").innerText = kittenName;
+           function getRandomElement(arr) {
+            const index = Math.floor(Math.random() * arr.length);
+            return arr[index];
         }
+
+        function generateKittenName() {
+            const includeAdjective = document.getElementById("adjectiveCheckbox").checked;
+            const catName = getRandomElement(memeCatNames);
+
+            if (includeAdjective) {
+                const adjective = getRandomElement(lolcatAdjectives);
+                return `${adjective} ${catName}`;
+            } else {
+                return catName;
+            }
+        }
+
+        document.getElementById("generateButton").addEventListener("click", function() {
+            const kittenName = generateKittenName();
+            document.getElementById("kittenName").innerText = kittenName;
+        });
     </script>
-    <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
