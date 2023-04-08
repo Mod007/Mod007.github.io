@@ -53,14 +53,15 @@
         "gelatokitty", "kopicat", "nipponcat", "tofuwhiskers", "raviolipaws", "meowtatouille",
         "fatamericano", "zippymeow"];
           let adjyes = document.getElementById('include-adjective');
-           
-            
-            if () {
-      const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
-            }
+           const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
             const randomName = customs[Math.floor(Math.random() * customs.length)];
             
-            const kittenName = randomAdjective + " " + randomName;
+            if (adjyes) {
+                const kittenName = randomAdjective + " " + randomName;
+            }
+            else {
+               const kittenName = randomName; 
+            }
             
             // Display the generated kitten name
             document.getElementById("generatedName").innerText = kittenName;
