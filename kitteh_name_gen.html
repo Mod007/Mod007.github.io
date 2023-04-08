@@ -46,29 +46,16 @@
         "tofunapper", "whiskersghetti", "whiskrat", "fluffalatte", "sprintycat", "nightcrawler",
         "gelatokitty", "kopicat", "nipponcat", "tofuwhiskers", "raviolipaws", "meowtatouille",
         "fatamericano", "zippymeow"];
+      const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+            const randomName = customs[Math.floor(Math.random() * customs.length)];
             
-           function getRandomElement(arr) {
-            const index = Math.floor(Math.random() * arr.length);
-            return arr[index];
+            const kittenName = randomAdjective + " " + randomName;
+            
+            // Display the generated kitten name
+            document.getElementById("generatedName").innerText = kittenName;
         }
-
-        function generateKittenName() {
-            const includeAdjective = document.getElementById("adjectiveCheckbox").checked;
-            const catName = getRandomElement(customs);
-
-            if (includeAdjective) {
-                const adjective = getRandomElement(adjectives);
-                return `${adjective} ${catName}`;
-            } else {
-                return catName;
-            }
-        }
-
-        document.getElementById("generateButton").addEventListener("click", function() {
-            const kittenName = generateKittenName();
-            document.getElementById("kittenName").innerText = kittenName;
-        });
     </script>
+    <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
