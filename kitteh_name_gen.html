@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitten Name Generator</title>
+     <p>Do you want to include an adjective in the kitten names?</p>
+    <label for="include-adjective">Yes</label>
+    <input type="radio" id="include-adjective" name="include-adjective" value="yes" checked>
+    <label for="no-adjective">No</label>
+    <input type="radio" id="no-adjective" name="include-adjective" value="no">
+    <br><br>
     <script>
         function generateKittenName() {
             const adjectives = ["Chonky", "Fatty", "Wobbly", "Fluffy", "Cuddly", "Furry", "Tiny", "Sassy",
@@ -46,7 +52,12 @@
         "tofunapper", "whiskersghetti", "whiskrat", "fluffalatte", "sprintycat", "nightcrawler",
         "gelatokitty", "kopicat", "nipponcat", "tofuwhiskers", "raviolipaws", "meowtatouille",
         "fatamericano", "zippymeow"];
+          let adjyes = document.getElementById('include-adjective');
+           
+            
+            if () {
       const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+            }
             const randomName = customs[Math.floor(Math.random() * customs.length)];
             
             const kittenName = randomAdjective + " " + randomName;
