@@ -82,14 +82,15 @@
 </head>
 <body>
     <h1>Kitten Name Generator</h1>
+    
+    <p>Click the button to generate a funny kitten name:</p> 
+    <button onclick="generateKittenName()">Generate Name</button>
+    <p id="generatedName" style="font-size: 1.5rem; font-weight: bold;"></p>
     <p>Do you want to include an adjective in the kitten names?</p>
     <label for="include-adjective">Yes</label>
     <input type="radio" id="include-adjective" name="include-adjective" value="yes" checked>
     <label for="no-adjective">No</label>
     <input type="radio" id="no-adjective" name="include-adjective" value="no">
     <br><br>
-    <p>Click the button to generate a funny kitten name:</p>
-    <button onclick="generateKittenName()">Generate Name</button>
-    <p id="generatedName" style="font-size: 1.5rem; font-weight: bold;"></p>
 </body>
 </html>
