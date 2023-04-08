@@ -54,10 +54,10 @@
 
         function generateKittenName() {
             const includeAdjective = document.getElementById("adjectiveCheckbox").checked;
-            const catName = getRandomElement(memeCatNames);
+            const catName = getRandomElement(customs);
 
             if (includeAdjective) {
-                const adjective = getRandomElement(lolcatAdjectives);
+                const adjective = getRandomElement(adjectives);
                 return `${adjective} ${catName}`;
             } else {
                 return catName;
