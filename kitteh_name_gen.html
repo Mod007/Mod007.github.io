@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitten Name Generator</title>
-     
+
     <script>
-        function generateKittenName() {
-            const adjectives = ["Chonky", "Fatty", "Wobbly", "Fluffy", "Cuddly", "Furry", "Tiny", "Sassy",
+        const adjectives = ["Chonky", "Fatty", "Wobbly", "Fluffy", "Cuddly", "Furry", "Tiny", "Sassy",
             "Feisty", "Whiskery", "Squeaky", "Scratchy", "Snoozy", "Pouncy", "Zoomy",
-            "Jumpy", "Purrfect", "Snuggly", "Bouncy", "Clumsy", "Sleepy", "Spotty", "Fatter", "Chonkster", 
+            "Jumpy", "Purrfect", "Snuggly", "Bouncy", "Clumsy", "Sleepy", "Spotty", "Fatter", "Chonkster",
             "Speedykitz", "Sneakiez", "Lazytail", "Derpster", "Smoothwhiskerz", "Cutenose",
             "Furryfloof", "Zoomiespawz", "Trickster", "Snoozyhead", "Clumsykitz", "Slickfur", "Meowtastic",
             "Rollypolly", "Swiftstripe", "Prankiepawz", "Couchloafer", "Nogginfluff", "Slywhiskers",
@@ -29,35 +29,38 @@
             "Dozykit", "Dunderhead", "Slinkytail", "Warmheart", "Heftykitz", "Fleetfoot", "Sneakywhiskerz",
             "Pillowhogger", "Confuddled", "Swiftpounce", "Purrballs", "Snugglebum", "Tubbypaws"
         ];
-            const customs = ["fattus cattus", "fattius cattius", "kittius cattius the fattius", 
-    "catter","fatter","floof", "kitter", "kitteh", "bisse", "pspspspspsps", 
-    "babaghanoush", "fat", "cat", "O Allah the Almighty (Allahu Allah)", "Tuna",
-    "Protect me and guide me (Allahu Allah)", "chili", "filfil", 
-    "fattius cattius the rattius","sillius soddus",  "naughtius maximus", 
-    "sussus amogus", "el ratata", "katatouille","oh noo, our bowl, its broken",
-    "tummer", "thummyas gefferson", "tummy cat", "tumtum", "tummy", "tummius kitter",
-    "tummius cattius", "kat", "kitkat", "kitterkat", "kitter catter", "sonic",
-    "crash bandicoot", "glass bandicoot", "frozone on hardwood", 
-    "suspiscious moose", "404 kitter not found", "ratacatouille", "chonkpuccino", "meowzerspeed", "nightwhiskerz", "jellopaws", "catffeine",
-        "espressoclaw", "sushinibbler", "tofupounce", "meowzarella", "remywhiskers", "fatmewgli",
-        "supersonicpurr", "twilightmew", "jellybelly", "zoomiebean", "cappuccikitty", "nekotokyo",
-        "beanfu", "linguinifur", "ratamew", "chunkyristretto", "demonpaws", "lunarwhiskers",
-        "wigglewobbles", "cafekitte", "kawaiikat", "silkytofu", "pizzapurrs", "catouillememe",
-        "plumpuccino", "speedmeowster", "shadowmew", "jigglytail", "meowaccino", "catzilla",
-        "tofunapper", "whiskersghetti", "whiskrat", "fluffalatte", "sprintycat", "nightcrawler",
-        "gelatokitty", "kopicat", "nipponcat", "tofuwhiskers", "raviolipaws", "meowtatouille",
-        "fatamericano", "zippymeow"];
-          let adjyes = document.getElementById('include-adjective');
-           const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+        const customs = ["fattus cattus", "fattius cattius", "kittius cattius the fattius",
+            "catter", "fatter", "floof", "kitter", "kitteh", "bisse", "pspspspspsps",
+            "babaghanoush", "fat", "cat", "O Allah the Almighty (Allahu Allah)", "Tuna",
+            "Protect me and guide me (Allahu Allah)", "chili", "filfil",
+            "fattius cattius the rattius", "sillius soddus", "naughtius maximus",
+            "sussus amogus", "el ratata", "katatouille", "oh noo, our bowl, its broken",
+            "tummer", "thummyas gefferson", "tummy cat", "tumtum", "tummy", "tummius kitter",
+            "tummius cattius", "kat", "kitkat", "kitterkat", "kitter catter", "sonic",
+            "crash bandicoot", "glass bandicoot", "frozone on hardwood",
+            "suspiscious moose", "404 kitter not found", "ratacatouille", "chonkpuccino", "meowzerspeed", "nightwhiskerz", "jellopaws", "catffeine",
+            "espressoclaw", "sushinibbler", "tofupounce", "meowzarella", "remywhiskers", "fatmewgli",
+            "supersonicpurr", "twilightmew", "jellybelly", "zoomiebean", "cappuccikitty", "nekotokyo",
+            "beanfu", "linguinifur", "ratamew", "chunkyristretto", "demonpaws", "lunarwhiskers",
+            "wigglewobbles", "cafekitte", "kawaiikat", "silkytofu", "pizzapurrs", "catouillememe",
+            "plumpuccino", "speedmeowster", "shadowmew", "jigglytail", "meowaccino", "catzilla",
+            "tofunapper", "whiskersghetti", "whiskrat", "fluffalatte", "sprintycat", "nightcrawler",
+            "gelatokitty", "kopicat", "nipponcat", "tofuwhiskers", "raviolipaws", "meowtatouille",
+            "fatamericano", "zippymeow"];
+
+        function generateKittenName() {
+            let ifAdj = document.getElementById('include-adjective');
+            const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
             const randomName = customs[Math.floor(Math.random() * customs.length)];
-            
-            if (adjyes) {
-                const kittenName = randomAdjective + " " + randomName;
+            let kittenName
+
+            if (ifAdj) {
+                kittenName = randomAdjective + " " + randomName;
             }
             else {
-               const kittenName = randomName; 
+                kittenName = randomName;
             }
-            
+
             // Display the generated kitten name
             document.getElementById("generatedName").innerText = kittenName;
         }
@@ -67,6 +70,7 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
+
         button {
             padding: 1rem;
             font-size: 1rem;
@@ -75,15 +79,17 @@
             border: none;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #0066cc;
         }
     </style>
 </head>
+
 <body>
     <h1>Kitten Name Generator</h1>
-    
-    <p>Click the button to generate a funny kitten name:</p> 
+
+    <p>Click the button to generate a funny kitten name:</p>
     <button onclick="generateKittenName()">Generate Name</button>
     <p id="generatedName" style="font-size: 1.5rem; font-weight: bold;"></p>
     <p>Do you want to include an adjective in the kitten names?</p>
@@ -93,4 +99,5 @@
     <input type="radio" id="no-adjective" name="include-adjective" value="no">
     <br><br>
 </body>
+
 </html>
